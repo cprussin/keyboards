@@ -1,0 +1,2 @@
+config SHIELD_SHAUNA
+    def_bool $(shields_list_contains,shauna)
