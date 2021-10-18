@@ -1,5 +1,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+#define HWCTL 1
 
 / {
     keymap {
@@ -15,10 +19,27 @@
 // -----------------------------------------------------------------------------------------------------------------------------------------------------------------
             bindings = <
     &kp GRAVE &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp   N8  &kp  N9 &kp  N0  &kp MINUS &kp EQUAL   &kp BSPC   &kp ESC
-    &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp   I   &kp  O  &kp   P  &kp LBKT &kp RBKT    &kp BSLH   &kp SPACE
-    &kp CLCK    &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp   K   &kp  L  &kp SEMI &kp SQT             &kp RET    &kp SPACE
-    &kp LSHFT             &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT &kp UP     &kp SPACE
-    &kp LCTRL  &kp LGUI &kp LALT               &kp SPACE                     &kp  RCTRL  &kp  SPACE  &kp  LEFT  &kp  DOWN  &kp RIGHT
+    &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp   I   &kp  O  &kp   P  &kp LBKT &kp RBKT    &kp BSLH   &trans
+    &kp CLCK    &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp   K   &kp  L  &kp SEMI &kp SQT             &kp RET    &trans
+    &kp LSHFT             &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT &kp UP     &trans
+    &kp LCTRL  &kp LGUI &kp LALT               &kp SPACE                     &kp  RCTRL  &mo HWCTL   &kp  LEFT  &kp  DOWN  &kp RIGHT
+            >;
+        };
+
+        hwctl_layer  {
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+// |         |BT_SEL 1 |BT_SEL 2 |BT_SEL 3 |BT_SEL 4 |BT_SEL 5 |BT_SEL 6 |BT_SEL 7 |BT_SEL 8 |BT_SEL 9 |BT_SEL 0 |         |         |       BT_CLR      |BOOTLOAD |
+// |               |         |         |         |         |         |         |         |         |         |         |         |         |             |         |
+// |                   |         |         |         |         |         |         |         |         |         |         |         |      OUT_TOG      |         |
+// |                        |         |         |         |         |         |         |         |         |         |         |              | OUT_USB |         |
+// |               |            |           |                                                           |              |         |   | BT_PRV  | OUT_BLE | BT_NXT  |
+// -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+            bindings = <
+    &trans    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5 &bt BT_SEL 6 &bt BT_SEL 7 &bt BT_SEL 8 &bt BT_SEL 9 &bt BT_SEL 0  &trans    &trans      &bt BT_CLR    &bootloader
+    &trans     &trans &trans &trans &trans &trans &trans &trans &trans    &trans  &trans   &trans   &trans      &trans        &trans
+    &trans      &trans &trans &trans &trans &trans &trans &trans &trans    &trans  &trans   &trans              &out OUT_TOG  &trans
+    &trans                &trans &trans &trans &trans &trans &trans &trans &trans    &trans  &trans   &trans    &out OUT_USB  &trans
+    &trans     &trans   &trans                 &trans                        &trans      &trans   &bt BT_PREV   &out OUT_BLE  &bt BT_NXT
             >;
         };
     };
