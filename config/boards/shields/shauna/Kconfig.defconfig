@@ -1,6 +1,6 @@
 if SHIELD_SHAUNA
 
 config ZMK_KEYBOARD_NAME
-    default "Shauna's Keyboard"
+    default "Shauna's Kbd"
 
 endif
