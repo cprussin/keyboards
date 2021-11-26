@@ -1,0 +1,26 @@
+{
+    "nixpkgs": {
+        "branch": "nixpkgs-unstable",
+        "description": "A read-only mirror of NixOS/nixpkgs tracking the released channels. Send issues and PRs to",
+        "homepage": "https://github.com/NixOS/nixpkgs",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "98747f27ecfee70c8c97b195cbb94df80a074dda",
+        "sha256": "04ss525ns5qqlggrdhvc6y4hqmshylda9yd0y99ddliyn15wmf27",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs/archive/98747f27ecfee70c8c97b195cbb94df80a074dda.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "smooth-prim": {
+        "branch": "master",
+        "description": "OpenSCAD smooth primitives library",
+        "homepage": null,
+        "owner": "rcolyer",
+        "repo": "smooth-prim",
+        "rev": "25ac614ef0d65083b6e641a46d12e815996d97d8",
+        "sha256": "11581469yxslrgdc8blg98y1dzd5rln5m1k577qcb8751v6lc089",
+        "type": "tarball",
+        "url": "https://github.com/rcolyer/smooth-prim/archive/25ac614ef0d65083b6e641a46d12e815996d97d8.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
